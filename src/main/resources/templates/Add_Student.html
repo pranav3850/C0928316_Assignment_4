@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <!-- Link to external CSS -->
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <!-- Add favicon -->
+    <link th:href="@{/icons/favicon.ico}" rel="icon" type="image/x-icon" />
+</head>
+<body>
+<!-- Include Header -->
+<div th:replace="~{fragments/header-footer :: header}"></div>
+
+<h1>Add Student</h1>
+<form th:action="@{/students/save}" th:object="${student}" method="post">
+    <div>
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" />
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" />
+        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    </div>
+    <div>
+        <label>Age:</label>
+        <input type="number" th:field="*{age}" />
+        <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+    </div>
+    <button type="submit">Save</button>
+</form>
+<a href="/students">Back to Students</a>
+
+<!-- Include Footer -->
+<div th:replace="~{fragments/header-footer :: footer}"></div>
+</body>
+</html>
