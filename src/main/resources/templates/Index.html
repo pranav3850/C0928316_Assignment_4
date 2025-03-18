@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <!-- Link to external CSS -->
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <!-- Add favicon -->
+    <link th:href="@{/icons/favicon.ico}" rel="icon" type="image/x-icon" />
+</head>
+<body>
+<!-- Include Header -->
+<div th:replace="~{fragments/header-footer :: header}"></div>
+
+<h1>Students</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.id}"></td>
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.age}"></td>
+        <td>
+            <form th:action="@{/students/delete/{id}(id=${student.id})}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<a href="/students/new">Add New Student</a>
+
+<!-- Include Footer -->
+<div th:replace="~{fragments/header-footer :: footer}"></div>
+</body>
+</html>

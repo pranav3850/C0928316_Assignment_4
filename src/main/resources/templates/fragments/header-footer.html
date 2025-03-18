@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragments</title>
+</head>
+<body>
+<!-- Header Fragment -->
+<header th:fragment="header">
+    <div style="background-color: #333; color: white; padding: 10px; text-align: center;">
+        <h1>Student Management System</h1>
+        <nav style="padding-top: 20px">
+            <a href="/students" style="color: white; margin: 0 10px;">Home</a>
+            <a href="/students/new" style="color: white; margin: 0 10px;">Add Student</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Footer Fragment -->
+<footer th:fragment="footer">
+    <div style="background-color: #333; color: white; padding: 10px; text-align: center; margin-top: 20px;">
+        <p>&copy; 2023 Student Management System. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
