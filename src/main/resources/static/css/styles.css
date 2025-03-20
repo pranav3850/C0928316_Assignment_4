@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-    color: white;
+    color: #333;
 }
 
 table {
@@ -53,11 +53,14 @@ header nav a:hover {
 
 /* Footer styles */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
     text-align: center;
-    flex-shrink: 0; /* Prevent the footer from shrinking */
+    padding: 10px;
 }
 
 /* Form styles */

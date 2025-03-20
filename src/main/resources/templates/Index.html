@@ -28,12 +28,12 @@
         <td th:text="${student.age}"></td>
         <td>
             <form th:action="@{/students/delete/{id}(id=${student.id})}" method="post">
+                <input type="hidden" name="id" th:value="${student.id}" />
                 <button type="submit">Delete</button>
             </form>
         </td>
     </tr>
 </table>
-<a href="/students/new">Add New Student</a>
 
 <!-- Include Footer -->
 <div th:replace="~{fragments/header-footer :: footer}"></div>
